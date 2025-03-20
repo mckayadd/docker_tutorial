@@ -172,3 +172,8 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Ignore system files
+.DS_Store   # macOS Finder metadata file
+Thumbs.db   # Windows thumbnail database
+.DS_Store

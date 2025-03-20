@@ -1,0 +1,24 @@
+# version: "3.8"
+
+services:
+  prime-checker:
+    build: ./server  # ✅ Use the correct path for the server
+    container_name: prime_checker
+    ports:
+      - "8000:8000"
+    networks:
+      - prime_network
+
+  prime-client:
+    build: ./client  # ✅ Use the correct path for the client
+    container_name: prime_client
+    depends_on:
+      - prime-checker
+    networks:
+      - prime_network
+    stdin_open: true
+    tty: true
+
+networks:
+  prime_network:
+
